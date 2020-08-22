@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="UTF-8">
+<head>
+    <title>Tạo Đơn Hàng</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<h1>tạo đơn hàng</h1>
+<form action="/luu-don-hang" method="post">
+    <select name="KhachHangID">
+        <% khs.map(e=>{%>
+        <option value="<%= e.ID %>"><%= e.TenKH %></option>
+        <% })%>
+    </select>
+    <label>Chọn Sản Phẩm</label>
+    <ul>
+        <% sps.map(function (e) { %>
+        <li><label><input type="checkbox" name="SanPhamID[]" value="<%= e.ID %>"/><%= e.TenSP %></label></li>
+        <% }) %>
+    </ul>
+    <br>
+    <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lala</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<form action="/search" method="get">
+    <input type="text" name="keyword"/>
+    <button type="submit">Search</button>
+</form>
+<h1>Danh sách khách hàng</h1>
+<ol>
+    <%khs.map(function (v){ %>
+    <li><a href="/chi-tiet-khach-hang/<%= v.ID %>"><%= v.TenKH %></li>
+    <% }) %>
+</ol>
+</body>
+</html>
